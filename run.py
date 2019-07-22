@@ -2,11 +2,11 @@ from user import User
 from login import Login
 import random
 
-def create_user(fname, lname, phone, email, user, pasword):
+def create_user(f_name, l_name, phone, email, username, pasword):
     """
     Function to create a new user
     """
-    new_user = User(fname, lname, phone, email, user, pasword)
+    new_user = User(f_name, l_name, phone, email, username, pasword)
     return new_user
 
 def save_user(user):
@@ -19,19 +19,25 @@ def del_user(user):
     """
     Function to delete a user
     """
-    user.delete_contact()
+    user.delete_user()
     
-def find_user(number):
+def find_user(phone):
     """
     Function that helps find a user by number
     """
-    return User.user_exist(number)
+    return User.user_exist(phone)
 
 def display_user():
     """
     Function that displays all the saved users
     """
     return User.display_user()
+
+def check_existing_user(phone):
+    """
+    finds user by number
+    """
+    return User.find_by_number(phone)
 
 def main():
     print("Hello welcome to pasword locker. What is your name?")
@@ -57,18 +63,18 @@ def main():
                 l_name = input()
                 
                 print("Phone number ...")
-                p_number = input()
+                phone = input()
 
                 print("Email address ...")
-                e_address = input()
+                email = input()
                 
                 print("User name ...")
-                user_name = input()
+                username = input()
                 
                 print("pasword ...")
-                pasword = input()
+                password = input()
                 
-                save_user(create_user(f_name, l_name,p_number, e_address, user_name, pasword))
+                save_user(create_user(f_name, l_name,phone, email, username, password))
                 
                 print('/n')
                 print(f"New User {f_name} {l_name} created")
@@ -80,7 +86,7 @@ def main():
                 print ('/n')
                 for user in display_user():
                         
-                        print(f"{user.f_name} {user.l_name} .....{user.p_number}")
+                        print(f"{user.f_name} {user.l_name} .....{user.phone}")
                         
                         print('/n')
                 else:
@@ -90,17 +96,17 @@ def main():
         elif short_code == 'fu':
                 print("Enter the phone number you want to search for")
                 search_number = input()
-                if check_existing _user(search_number):
+                if check_existing_user(search_number):
                     search_user = find_user(search_number)
                     print(f"{search_user.f_name} {search_user.l_name}")
                     print("_"*20)
-                    print(f"Phone number .....{search_user.p_number}")
+                    print(f"Phone number .....{search_user.phone}")
                     
                     print(f"Email address .....{search_user.email}")
                 
                     print(f"Username .....{search_user.username}")
                     
-                    print(f"Pasword .....{search_user.pasword}")
+                    print(f"Pasword .....{search_user.password}")
                     
                 else:
                     print("The user does not exist")
@@ -108,8 +114,9 @@ def main():
         elif short_code == 'ex':
                 print("Bye .....")
                 break
-            else:
-                print("I really dont get that.U se short codes")   } 
+        else:
+            print("I really dont get that.You see short codes") 
+    
                         
 
 

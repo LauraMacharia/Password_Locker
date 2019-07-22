@@ -12,7 +12,7 @@ class TestLogin(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_login = Login("snapchat","Laura","Macharia","LauraMacharia","ruvy") # create login object
+        self.new_login = Login("snapchat","Laura","Macharia","LauraMacharia","ruvy")
     def test_init(self):
         '''
         test_init test case to test if the object is initialized properly
@@ -27,7 +27,7 @@ class TestLogin(unittest.TestCase):
         '''
         test_save_login test case to test is the login object is saved into the login
         '''
-        self.new_login.save_login()#saving the new user
+        self.new_login.save_login()
         self.assertEqual(len(Login.login),1)
 
 
@@ -51,7 +51,7 @@ class TestLogin(unittest.TestCase):
         test to check if we can return a Boolean if we cannot find the login.
         '''
         self.new_login.save_login()
-        test_login = Login("Test","Laura","Macharia","LauraMacharia","ruvy")#new user
+        test_login = Login("Test","Laura","Macharia","LauraMacharia","ruvy")
         test_login.save_login()
         login_exists = Login.login_exist("ruvy")
         self.assertTrue(login_exists)
