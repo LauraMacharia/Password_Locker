@@ -43,31 +43,75 @@ def main():
     while True:
         print("Use these short codes : nu - create a new user, du - display user, fu - find user, du - delete user ex - exit user")
         
-        short_code input = ().lower()
+        short_code = input().lower()
         
         if short_code == "nu":
-            print("New user")
-            print("_"*10)
-            
-            print ("First name ...")
-            f_name = input
-            
-             print("Last name ...")
-            l_name = input()
-            
-            print("Phone number ...")
-            p_number = input()
+            while True:
+                print("New user")
+                print("_"*10)
+                
+                print ("First name ...")
+                f_name = input
+                
+                print("Last name ...")
+                l_name = input()
+                
+                print("Phone number ...")
+                p_number = input()
 
-            print("Email address ...")
-            e_address = input()
-            
-            print("User name ...")
-            user_name = input()
-            
-            print("pasword ...")
-            pasword = input()
-            
-            save_user(create_user(f_name, l_name,p_number, e_address, user_name, pasword))
-            
+                print("Email address ...")
+                e_address = input()
+                
+                print("User name ...")
+                user_name = input()
+                
+                print("pasword ...")
+                pasword = input()
+                
+                save_user(create_user(f_name, l_name,p_number, e_address, user_name, pasword))
+                
+                print('/n')
+                print(f"New User {f_name} {l_name} created")
+                print ('/n')
+                
+        elif  short_code == 'du':
+            if display_user():
+                print("Here is a list of all the users")
+                print ('/n')
+                for user in display_user():
+                        
+                        print(f"{user.f_name} {user.l_name} .....{user.p_number}")
+                        
+                        print('/n')
+                else:
+                    print('/n')
+                    print("you do not have any user saved yet")
+                    
+        elif short_code == 'fu':
+                print("Enter the phone number you want to search for")
+                search_number = input()
+                if check_existing _user(search_number):
+                    search_user = find_user(search_number)
+                    print(f"{search_user.f_name} {search_user.l_name}")
+                    print("_"*20)
+                    print(f"Phone number .....{search_user.p_number}")
+                    
+                    print(f"Email address .....{search_user.email}")
+                
+                    print(f"Username .....{search_user.username}")
+                    
+                    print(f"Pasword .....{search_user.pasword}")
+                    
+                else:
+                    print("The user does not exist")
+                    
+        elif short_code == 'ex':
+                print("Bye .....")
+                break
+            else:
+                print("I really dont get that.U se short codes")   } 
+                        
 
-                           
+
+if __name__ == '__main__':
+     main()
