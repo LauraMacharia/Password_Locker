@@ -53,4 +53,3 @@ This project is licensed under the MIT License - see the LICENSE file below for 
 ## Acknowledgments
 ​
 * Laura Macharia
-* e.t.c
