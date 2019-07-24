@@ -66,7 +66,7 @@ def main():
     print(f"Hello{user_name}.what would you like to do?")
     print('\n')
     while True:
-        print("use these short codes : ca - create a new account,cc - create credentials li - login, dc - display login, fc - find a user, ex - exit the user")
+        print("use these short codes : ca - create a new account,cc - create credentials li - login, dc - display login, fu - find a user, ex - exit the user")
         short_code = input().lower()
         if short_code == 'ca':
             # print("New User")
@@ -89,7 +89,7 @@ def main():
                     print('Failed. One input field was blank')
 
                 else:
-                    save_user(create_user(f_name,l_name,p_number,e_address,username,password))#create and save new user
+                    save_user(create_user(f_name,l_name,p_number,e_address,username,password))
                     print ('\n')
                     print(f"New User {f_name} {l_name} created successfully")
                     print ('\n')
@@ -97,7 +97,6 @@ def main():
                 break
 
         elif short_code == 'cc':
-            # print("New Login")
             print("-"*10)
             print("Enter username....")
             username = input()

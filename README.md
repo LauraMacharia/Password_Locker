@@ -1,4 +1,4 @@
-# Passowrd_Warehouse
+# Passowrd_Locker
 ​
 ## Author
 ​
@@ -23,16 +23,12 @@ Install Password Safe on your local machine bt cloning this repository
 ​
 ## BDD
 ​
-| Input   |  Behavior | Expected Output|
-|:--------|:---------|:--------------|
-| Requires user to register or login to access password storage services | Takes in user username and password which will be used for loggin | Takes in user username and password which will be used for loggin |
-| Asks for user details | Saves them and can be retrieved | Saves them and can be retrieved |
-| requests are made through the short codes | Responds accordingly to the user request | Responds accordingly to the user request |
-| ca | creates account | creates account |
-| li | logs user into system | logs user into system |
-| cc | Gives user new entry for entering a new credential for safekeeping | Gives user new entry for entering a new credential for safekeeping |
-| gp | Generates a passoword for the user when user invokes the process | Generates a passoword for the user when user invokes the process |
-| du | Displays all accounts, only after loggin is validated | Displays all accounts, only after loggin is validated |
+* ca - create a new account
+* cc - create credentials 
+*  li - login,
+*  dc - display login 
+*  fu - find a user
+*  ex - exit the user  
 ​
 ## Built With
 ​
